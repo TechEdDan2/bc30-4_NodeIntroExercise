@@ -53,8 +53,8 @@ let pathAction;
 
 // Using the process.argv to get the file path from the command line arguments argv[2] will return the second argument passed in the command line
 if (process.argv[2] === '--out') {
-    pathAction = process.argv[3];
     path = process.argv[4];
+    pathAction = process.argv[3];
 } else {
     path = process.argv[2];
     pathAction = null;
@@ -82,9 +82,7 @@ function readOrWrite(text, pathAction) {
             if (error) {
                 console.log(`Error in writing ${pathAction}: ${error}`);
                 process.exit(1);
-
             }
-
         });
     } else {
         console.log(text);
